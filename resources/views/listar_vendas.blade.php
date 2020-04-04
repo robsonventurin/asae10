@@ -15,6 +15,7 @@
             <th scope="col">Cliente</th>
             <th scope="col">Descrição</th>
             <th scope="col">Valor Total</th>
+            <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,13 @@
                     <td>{{ $v->cliente->nome }}</td>
                     <td>{{ $v->descricao }}</td>
                     <td>R$ {{ number_format($v->valor_total, 2, ',', '.') }}</td>
+                    <td>
+                        <a href="#" data-toggle="modal" data-target="#modalExcluir"
+                            data-href="{{ route('excluir_vendas', [ 'id' => $v->id ]) }}"
+                            data-id="{{ $v->id }} "
+                        >Excluir</a> -
+                        <a href="{{ route('alterar_vendas', [ 'id' => $v->id ]) }}">Alterar</a>
+                    </td>
                 </tr>
             @endforeach
             
@@ -41,7 +49,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Deseja mesmo excluir o usuário <span class="nome"></span> de id #<span class="id"></span>?</p>
+                    <p>Deseja mesmo excluir a venda de id #<span class="id"></span>?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -57,7 +65,6 @@
     $('#modalExcluir').on('show.bs.modal', function(e) {
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).attr('data-href'));
         $(this).find('span.id').html($(e.relatedTarget).attr('data-id'));
-        $(this).find('span.nome').html($(e.relatedTarget).attr('data-nome'));
     });
 </script>
 @endsection

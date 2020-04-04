@@ -36,3 +36,8 @@ Route::get('/vendas/listar', 'VendaController@telaListar')->name("listar_vendas"
 
 Route::get('/vendas/cadastro', 'VendaController@telaCadastro')->name("cadastrar_venda");
 Route::post('/vendas/cadastro/efetua', 'VendaController@adicionar')->name("cadastrar_venda_efetua");
+
+Route::get('/vendas/alterar/{id}', 'VendaController@telaAlterar')->name("alterar_vendas");
+Route::post('/vendas/alterar/efetua/{id}', 'VendaController@alterar')->name("alterar_vendas_efetua");
+
+Route::get('/vendas/excluir/{id}', 'VendaController@excluir')->name("excluir_vendas");

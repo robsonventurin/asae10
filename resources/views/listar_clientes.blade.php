@@ -52,7 +52,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Deseja mesmo excluir o usuário <span class="nome"></span> de id #<span class="id"></span>?</p>
+                    <p>Deseja mesmo excluir o cliente <span class="nome"></span> de id #<span class="id"></span>? Lembrando que todas as vendas desse cliente também serão excluídas!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

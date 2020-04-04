@@ -12,6 +12,13 @@ class VendaController extends Controller
         $cliente = Cliente::all();
         return view('cadastrar_venda', [ "clientes" => $cliente]);
     }
+
+    function telaAlterar($id) {
+        $cliente = Cliente::all();
+        $v = Venda::find($id);
+        return view('alterar_vendas', [ "clientes" => $cliente, "venda" => $v]);
+    }
+
     
     function telaListar() {
         $lista = Venda::all();
@@ -31,6 +38,37 @@ class VendaController extends Controller
             $msg = "Venda para '" . $v->cliente->nome . "' adicionada com sucesso.";
         } else {
             $msg = "Venda não foi adicionada. Favor entrar em contato com o suporte.";
+        }
+        
+        return view('resultado', [ "mensagem" => $msg]);
+    }
+
+    function alterar(Request $req, $id) {
+        $valor_total = $req->input("valor_total");
+        $valor_total = str_replace('R$ ', '', str_replace(',','.', str_replace('.', '', $valor_total)));
+
+        $v = Venda::find($id);
+        $v->id_cliente = $req->input("id_cliente");
+        $v->descricao = $req->input("descricao");
+        $v->valor_total = $valor_total;
+
+        if ($v->save()) {
+            $msg = "Venda #'$v->id' alterada com sucesso.";
+        } else {
+            $msg = "Venda não foi alterada. Favor entrar em contato com o suporte.";
+        }
+        
+        return view('resultado', [ "mensagem" => $msg]);
+    }
+
+
+    function excluir($id) {
+        $v = Venda::find($id);
+
+        if ($v->delete()) {
+            $msg = "Venda #'$v->id' excluída com sucesso.";
+        } else {
+            $msg = "Venda não foi excluída. Favor entrar em contato com o suporte.";
         }
         
         return view('resultado', [ "mensagem" => $msg]);
