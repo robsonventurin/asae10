@@ -22,13 +22,13 @@
         <div class="form-group row">
             <label for="valor_total" class="col-sm-2 col-form-label">Valor Total:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="255" name="valor_total" id="valor_total" placeholder="R$ 0,00" value="R$ {{ number_format($venda->valor_total, 2, ',', '.') }}">
+                <input type="text" class="form-control" maxlength="255" name="valor_total" id="valor_total" placeholder="R$ 0,00" value="R$ {{ number_format($venda->valor_total, 2, ',', '.') }}" required>
             </div>
         </div>
         <div class="form-group row">
             <label for="descricao" class="col-sm-2 col-form-label">Descrição Da Venda:</label>
             <div class="col-sm-10">
-                <textarea class="form-control" name="descricao">{{ $venda->descricao }}</textarea>
+                <textarea class="form-control" name="descricao" required>{{ $venda->descricao }}</textarea>
             </div>
         </div>
         <div class="form-group row">

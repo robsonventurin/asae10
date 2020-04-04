@@ -12,19 +12,19 @@
         <div class="form-group row">
             <label for="nome" class="col-sm-2 col-form-label">Nome:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="100" name="nome" placeholder="Nome" value="{{ $cliente->nome }}">
+                <input type="text" class="form-control" maxlength="100" name="nome" placeholder="Nome" value="{{ $cliente->nome }}" required>
             </div>
         </div>
         <div class="form-group row">
             <label for="endereco" class="col-sm-2 col-form-label">Endereço:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="255" name="endereco" placeholder="Endereço" value="{{ $cliente->endereco }}">
+                <input type="text" class="form-control" maxlength="255" name="endereco" placeholder="Endereço" value="{{ $cliente->endereco }}" required>
             </div>
         </div>
         <div class="form-group row">
             <label for="cidade" class="col-sm-2 col-form-label">Cidade:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="100" name="cidade" placeholder="Cidade" value="{{ $cliente->cidade }}">
+                <input type="text" class="form-control" maxlength="100" name="cidade" placeholder="Cidade" value="{{ $cliente->cidade }}" required>
             </div>
         </div>
         <div class="form-group row">
@@ -40,7 +40,7 @@
         <div class="form-group row">
             <label for="cep" class="col-sm-2 col-form-label">CEP:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="8" name="cep" placeholder="CEP" value="{{ $cliente->cep }}">
+                <input type="text" class="form-control" maxlength="8" name="cep" placeholder="CEP" value="{{ $cliente->cep }}" required>
             </div>
         </div>
         <div class="form-group row">

@@ -12,19 +12,19 @@
         <div class="form-group row">
             <label for="nome" class="col-sm-2 col-form-label">Nome:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="100" name="nome" placeholder="Nome">
+                <input type="text" class="form-control" maxlength="100" name="nome" placeholder="Nome" required>
             </div>
         </div>
         <div class="form-group row">
             <label for="endereco" class="col-sm-2 col-form-label">Endereço:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="255" name="endereco" placeholder="Endereço">
+                <input type="text" class="form-control" maxlength="255" name="endereco" placeholder="Endereço" required>
             </div>
         </div>
         <div class="form-group row">
             <label for="cidade" class="col-sm-2 col-form-label">Cidade:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="100" name="cidade" placeholder="Cidade">
+                <input type="text" class="form-control" maxlength="100" name="cidade" placeholder="Cidade" required>
             </div>
         </div>
         <div class="form-group row">
@@ -40,7 +40,7 @@
         <div class="form-group row">
             <label for="cep" class="col-sm-2 col-form-label">CEP:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" maxlength="8" name="cep" placeholder="CEP" data-mask="numeric">
+                <input type="text" class="form-control" maxlength="8" name="cep" placeholder="CEP" data-mask="numeric" required>
             </div>
         </div>
         <div class="form-group row">
