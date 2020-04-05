@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return redirect()->route('listar_clientes');
+    return redirect()->route('listar_vendas');
 });
 
 /* Rotas para clientes */
